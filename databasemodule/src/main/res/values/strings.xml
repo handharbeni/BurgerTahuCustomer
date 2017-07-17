@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DatabaseModule</string>
+    <string name="server">http://192.168.1.100/trackmenuapi</string>
+    <string name="endpointmenu"></string>
+    <string name="endpointoutlet"></string>
+    <string name="endpointresto"></string>
+    <string name="endpointkurir"></string>
+    <string name="endpointorder"></string>
+</resources>
