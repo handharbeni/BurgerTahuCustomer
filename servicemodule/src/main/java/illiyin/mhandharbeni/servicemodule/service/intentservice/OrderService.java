@@ -7,13 +7,13 @@ import illiyin.mhandharbeni.databasemodule.AdapterModel;
 import illiyin.mhandharbeni.databasemodule.ModelOutlet;
 
 /**
- * Created by root on 17/07/17.
+ * Created by root on 22/07/17.
  */
 
-public class OutletService extends IntentService {
+public class OrderService extends IntentService {
     ModelOutlet modelOutlet;
     AdapterModel adapterModel;
-    public OutletService() {
+    public OrderService() {
         super("Outlet Service");
     }
 

@@ -20,12 +20,12 @@ public class MenuService extends IntentService {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         modelMenu = new ModelMenu();
-        adapterModel = new AdapterModel(getBaseContext(), modelMenu);
+        adapterModel = new AdapterModel(getBaseContext());
         return super.onStartCommand(intent, flags, startId);
     }
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        adapterModel.syncDataMenu();
+        adapterModel.syncDataMenu(modelMenu);
     }
 }

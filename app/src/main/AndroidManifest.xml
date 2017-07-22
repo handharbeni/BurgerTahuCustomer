@@ -26,6 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".fragment_activity.LoginFragment"/>
+        <activity android:name=".fragment_activity.SignupFragment"/>
+        <activity android:name=".fragment_activity.MainFragment"/>
     </application>
 
 </manifest>

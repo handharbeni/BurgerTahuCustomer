@@ -29,10 +29,22 @@ public class Crud {
     public RealmResults read(String key, String value){
         return crudRealm.read(key, value);
     }
-    public void update(String key, String value, RealmObject realmObject){
-        crudRealm.update(key, value, realmObject);
+    public RealmObject getRealmObject(String key, String value, RealmObject realmObject){
+        RealmObject objectUpdate = crudRealm.setObjectUpdate(key, value, realmObject);
+        return objectUpdate;
+    }
+    public void update(RealmObject realmObject){
+        crudRealm.update(realmObject);
     }
     public void delete(String key, String value){
         crudRealm.delete(key, value);
+    }
+    public Boolean checkDuplicate(String key, String value){
+        RealmResults realmResults = crudRealm.read(key, value);
+        if (realmResults.size() > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

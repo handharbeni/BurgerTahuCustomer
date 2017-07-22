@@ -21,6 +21,7 @@ public class CheckConnection extends AppCompatActivity implements ConnectivityCh
     Session session;
     public void init(Context context){
         this.context = context;
+        session = new Session(context);
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
@@ -30,7 +31,6 @@ public class CheckConnection extends AppCompatActivity implements ConnectivityCh
     }
     @Override
     public void onConnectionChange(ConnectivityEvent event) {
-        session = new Session(context);
         if(event.getState().getValue() == ConnectivityState.CONNECTED){
             session.setConnectionState("1");
         }else{

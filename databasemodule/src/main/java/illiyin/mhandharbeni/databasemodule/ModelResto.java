@@ -7,14 +7,21 @@ import io.realm.RealmObject;
  */
 
 public class ModelResto extends RealmObject {
-    String id, resto;
+    int id;
+    String resto;
+    String sha;
 
-    public String getId() {
-        return id;
+    public ModelResto(int id, String resto, String sha) {
+        this.id = id;
+        this.resto = resto;
+        this.sha = sha;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public ModelResto() {
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public String getResto() {
@@ -23,5 +30,17 @@ public class ModelResto extends RealmObject {
 
     public void setResto(String resto) {
         this.resto = resto;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getSha() {
+        return sha;
+    }
+
+    public void setSha(String sha) {
+        this.sha = sha;
     }
 }

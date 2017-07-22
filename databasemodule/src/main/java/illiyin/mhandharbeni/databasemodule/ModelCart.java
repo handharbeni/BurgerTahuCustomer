@@ -3,24 +3,26 @@ package illiyin.mhandharbeni.databasemodule;
 import io.realm.RealmObject;
 
 /**
- * Created by root on 17/07/17.
+ * Created by root on 22/07/17.
  */
 
-public class ModelMenu extends RealmObject {
+public class ModelCart  extends RealmObject {
     int id;
     String nama, gambar, harga, kategori, sha;
+    int jumlah;
 
 
-    public ModelMenu(int id, String nama, String gambar, String harga, String kategori, String sha) {
+    public ModelCart(int id, String nama, String gambar, String harga, String kategori, String sha, Integer jumlah) {
         this.id = id;
         this.nama = nama;
         this.gambar = gambar;
         this.harga = harga;
         this.kategori = kategori;
         this.sha = sha;
+        this.jumlah = jumlah;
     }
 
-    public ModelMenu(){
+    public ModelCart(){
 
     }
 
@@ -70,6 +72,14 @@ public class ModelMenu extends RealmObject {
 
     public void setSha(String sha) {
         this.sha = sha;
+    }
+
+    public int getJumlah() {
+        return jumlah;
+    }
+
+    public void setJumlah(int jumlah) {
+        this.jumlah = jumlah;
     }
 }
 

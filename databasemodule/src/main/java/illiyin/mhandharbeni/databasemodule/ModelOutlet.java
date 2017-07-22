@@ -7,13 +7,28 @@ import io.realm.RealmObject;
  */
 
 public class ModelOutlet extends RealmObject {
-    String id, outlet, alamat, latitude, longitude;
+    int id;
+    String outlet, alamat, latitude, longitude;
+    String sha;
 
-    public String getId() {
+    public ModelOutlet(int id, String outlet, String alamat, String latitude, String longitude, String sha) {
+        this.id = id;
+        this.outlet = outlet;
+        this.alamat = alamat;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.sha = sha;
+    }
+
+    public ModelOutlet(){
+
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -49,4 +64,15 @@ public class ModelOutlet extends RealmObject {
         this.longitude = longitude;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getSha() {
+        return sha;
+    }
+
+    public void setSha(String sha) {
+        this.sha = sha;
+    }
 }

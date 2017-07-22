@@ -22,14 +22,15 @@ public class AdapterModel {
     Crud crud;
     CallHttp callHttp;
 
-    public AdapterModel(Context context, RealmObject realmObject) {
+    public AdapterModel(Context context) {
         this.context = context;
-        crud = new Crud(context, realmObject);
         callHttp = new CallHttp(context);
     }
-    public void syncDataMenu(){
-        /*get data from server*/
+    public void syncDataMenu(RealmObject realmObject){
+        crud = new Crud(context, realmObject);
 
+        /*get data from server*/
+        String response = callHttp.get("");
         /*cek apakah sudah tersedia didalam database*/
 
         /*jika sudah maka cek sha*/
@@ -40,9 +41,11 @@ public class AdapterModel {
 
         /*jika belum ada dalam database maka insert data baru tersebut*/
     }
-    public void syncDataOutlet(){
-        /*get data from server*/
+    public void syncDataOutlet(RealmObject realmObject){
+        crud = new Crud(context, realmObject);
 
+        /*get data from server*/
+        String response = callHttp.get("");
         /*cek apakah sudah tersedia didalam database*/
 
         /*jika sudah maka cek sha*/

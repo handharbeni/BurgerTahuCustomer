@@ -9,6 +9,7 @@ import com.pddstudio.preferences.encrypted.EncryptedPreferences;
  */
 
 public class Session {
+    String defaultKey = "aJ5QElpvadHaiz7mcPNPVQx0P3Xxx0P3Xx";
     String NAMA = "NAMA",
             ALAMAT = "ALAMAT",
             NOTELP = "NOTELP",
@@ -20,7 +21,7 @@ public class Session {
     EncryptedPreferences encryptedPreferences;
     public Session(Context context) {
         this.context = context;
-        encryptedPreferences = new EncryptedPreferences.Builder(this.context)
+        encryptedPreferences = new EncryptedPreferences.Builder(context)
                 .withEncryptionPassword(this.context.getString(R.string.password)).build();
     }
 
@@ -34,9 +35,13 @@ public class Session {
                 .putString(STATUS, status)
                 .apply();
     }
-    public boolean checkSession(){
-        return !(encryptedPreferences.getUtils().decryptStringValue(encryptedPreferences.getString(KEY, "0")).equalsIgnoreCase("0")
-                && encryptedPreferences.getString(STATUS, "0").equalsIgnoreCase("0"));
+    public Boolean checkSession(){
+        if (encryptedPreferences.getUtils().decryptStringValue(
+                encryptedPreferences.getString(KEY, defaultKey)
+        ).equalsIgnoreCase("NOTHING") && encryptedPreferences.getString(STATUS, "0").equalsIgnoreCase("0")){
+            return false;
+        }
+        return true;
     }
     public void deleteSession(){
         encryptedPreferences.forceDeleteExistingPreferences();
