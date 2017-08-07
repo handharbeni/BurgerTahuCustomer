@@ -31,4 +31,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(path: ':realmlibrary')
     compile project(path: ':networklibrary')
+    compile project(path: ':sessionlibrary')
 }

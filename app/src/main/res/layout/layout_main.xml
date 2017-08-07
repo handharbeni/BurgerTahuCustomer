@@ -12,7 +12,7 @@
         android:layout_above="@+id/tabLayout">
     </android.support.v4.view.ViewPager>
     <android.support.design.widget.TabLayout
-        android:background="@color/colorAccent"
+        android:background="@drawable/gradient"
         android:layout_alignParentBottom="true"
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"

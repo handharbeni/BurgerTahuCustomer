@@ -11,17 +11,18 @@ import com.zplesac.connectionbuddy.models.ConnectivityEvent;
 import com.zplesac.connectionbuddy.models.ConnectivityState;
 
 import illiyin.mhandharbeni.sessionlibrary.Session;
+import illiyin.mhandharbeni.sessionlibrary.SessionListener;
 
 /**
  * Created by root on 17/07/17.
  */
 
-public class CheckConnection extends AppCompatActivity implements ConnectivityChangeListener{
+public class CheckConnection extends AppCompatActivity implements ConnectivityChangeListener, SessionListener{
     Context context;
     Session session;
     public void init(Context context){
         this.context = context;
-        session = new Session(context);
+        session = new Session(context, this);
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
@@ -36,5 +37,10 @@ public class CheckConnection extends AppCompatActivity implements ConnectivityCh
         }else{
             session.setConnectionState("0");
         }
+    }
+
+    @Override
+    public void sessionChange() {
+
     }
 }

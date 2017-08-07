@@ -4,6 +4,7 @@ import android.app.IntentService;
 import android.content.Intent;
 
 import illiyin.mhandharbeni.databasemodule.AdapterModel;
+import illiyin.mhandharbeni.databasemodule.ModelOrder;
 import illiyin.mhandharbeni.databasemodule.ModelOutlet;
 
 /**
@@ -11,7 +12,7 @@ import illiyin.mhandharbeni.databasemodule.ModelOutlet;
  */
 
 public class OrderService extends IntentService {
-    ModelOutlet modelOutlet;
+    ModelOrder modelOrder;
     AdapterModel adapterModel;
     public OrderService() {
         super("Outlet Service");
@@ -19,13 +20,16 @@ public class OrderService extends IntentService {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        modelOutlet = new ModelOutlet();
+        modelOrder = new ModelOrder();
         adapterModel = new AdapterModel(getBaseContext());
+        sendBroadCast();
         return super.onStartCommand(intent, flags, startId);
     }
-
+    public void sendBroadCast(){
+        this.sendBroadcast(new Intent().setAction("SERVICE ORDER").putExtra("MODE", "UPDATE ORDER"));
+    }
     @Override
     protected void onHandleIntent(Intent intent) {
-        adapterModel.syncDataOutlet(modelOutlet);
+        adapterModel.syncOrder(modelOrder);
     }
 }

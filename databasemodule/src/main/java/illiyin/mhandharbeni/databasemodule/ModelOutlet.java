@@ -1,13 +1,16 @@
 package illiyin.mhandharbeni.databasemodule;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by root on 17/07/17.
  */
 
 public class ModelOutlet extends RealmObject {
+    @PrimaryKey
     int id;
+
     String outlet, alamat, latitude, longitude;
     String sha;
 

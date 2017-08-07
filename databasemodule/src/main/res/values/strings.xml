@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">DatabaseModule</string>
-    <string name="server">http://192.168.1.100/trackmenuapi</string>
-    <string name="endpointmenu"></string>
-    <string name="endpointoutlet"></string>
+    <string name="module_server">http://192.168.1.100/trackmenuapi/</string>
+    <string name="endpointmenu">/users/menu?token=</string>
+    <string name="endpointoutlet">/public/list?type=outlet&amp;access=true</string>
     <string name="endpointresto"></string>
-    <string name="endpointkurir"></string>
-    <string name="endpointorder"></string>
+    <string name="endpointkurir">/users/tracking</string>
+    <string name="endpointorder">/users/order?token=</string>
+    <string name="endpointfeedeliv">/public/tools_value?access=true</string>
 </resources>

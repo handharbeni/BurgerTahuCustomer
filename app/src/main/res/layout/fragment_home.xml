@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/frame_container"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <RelativeLayout
+        android:id="@+id/homeLayout"
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent">
         <com.daimajia.slider.library.SliderLayout
@@ -28,4 +28,18 @@
                 android:src="@color/grey"/>
         </LinearLayout>
     </RelativeLayout>
-</FrameLayout>
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/menuLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/frame_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

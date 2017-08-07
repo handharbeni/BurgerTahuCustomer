@@ -1,13 +1,16 @@
 package illiyin.mhandharbeni.databasemodule;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by root on 17/07/17.
  */
 
 public class ModelResto extends RealmObject {
+    @PrimaryKey
     int id;
+
     String resto;
     String sha;
 

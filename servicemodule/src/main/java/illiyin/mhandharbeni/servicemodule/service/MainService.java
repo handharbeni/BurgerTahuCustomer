@@ -11,7 +11,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import illiyin.mhandharbeni.servicemodule.service.intentservice.MenuService;
+import illiyin.mhandharbeni.servicemodule.service.intentservice.OrderService;
 import illiyin.mhandharbeni.servicemodule.service.intentservice.OutletService;
+import illiyin.mhandharbeni.servicemodule.service.intentservice.TrackingService;
 
 /**
  * Created by root on 17/07/17.
@@ -67,8 +69,16 @@ public class MainService extends Service {
                         Intent is = new Intent(getBaseContext(), MenuService.class);
                         startService(is);
                     }
+                    if (!checkIsRunning(OrderService.class)){
+                        Intent is = new Intent(getBaseContext(), OrderService.class);
+                        startService(is);
+                    }
                     if (!checkIsRunning(OutletService.class)){
                         Intent is = new Intent(getBaseContext(), OutletService.class);
+                        startService(is);
+                    }
+                    if (!checkIsRunning(TrackingService.class)){
+                        Intent is = new Intent(getBaseContext(), TrackingService.class);
                         startService(is);
                     }
                 }
